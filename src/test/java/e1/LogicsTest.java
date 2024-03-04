@@ -1,7 +1,7 @@
 package e1;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-public class LogicTest {
+public class LogicsTest {
 
   private Logics logic;
   private final int gridSize = 5;
@@ -9,7 +9,7 @@ public class LogicTest {
   private Pair<Integer, Integer> initPawnPosition = new Pair<>(gridSize-1, gridSize-1);
   @BeforeEach
   void init() {
-    this.logic = new LogicsImpl(gridSize, new StaticPositionInitializer(initKnightPosition, initPawnPosition));
+    this.logic = new LogicsFactoryImpl(gridSize).createStaticLogics(initKnightPosition, initPawnPosition);
   }
 
   @Test

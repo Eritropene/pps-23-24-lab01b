@@ -10,11 +10,12 @@ public class GUI extends JFrame {
     
     private static final long serialVersionUID = -6218820567019985015L;
     private final Map<JButton,Pair<Integer,Integer>> buttons = new HashMap<>();
+    private final LogicsFactory logicsFactory = new LogicsFactoryImpl(SIZE);
     private final Logics logics;
     private final static int SIZE = 5;
     
     public GUI() {
-        this.logics = new LogicsImpl(SIZE);
+        this.logics = logicsFactory.createRandomLogics();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(100*SIZE, 100*SIZE);
         
