@@ -1,8 +1,14 @@
 package e2;
 
-public class LogicsImpl implements Logics {
+import java.util.Optional;
 
-    public LogicsImpl(int size) {
+public class LogicsImpl extends AbstractLogics {
+
+    public LogicsImpl(int size, int mines) {
+        if (size <= 0)
+            throw new IllegalArgumentException("Cannot create logics with grid size smaller than 1");
+        if (mines < 0)
+            throw new IllegalArgumentException("Cannot create logics with a negative number of mines");
     }
 
 }
