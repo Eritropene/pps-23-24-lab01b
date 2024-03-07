@@ -1,14 +1,15 @@
 package e2;
 
 import java.util.Optional;
+import java.util.Set;
 
 public class AbstractLogics implements Logics {
 
-    private int size;
-    private int mines;
-
-    public AbstractLogics() {
-
+    private Grid grid;
+    private Set<Pair<Integer, Integer>> mines;
+    public AbstractLogics(final Grid grid, final MineGenerator mineGenerator) {
+        this.grid = grid;
+        this.mines = mineGenerator.generateMines();
     }
     @Override
     public Optional<Integer> cell(Pair<Integer, Integer> pos) {
@@ -35,11 +36,4 @@ public class AbstractLogics implements Logics {
 
     }
 
-    protected int getSize() {
-        return size;
-    }
-
-    protected int getMines() {
-        return mines;
-    }
 }
