@@ -3,6 +3,8 @@ package e2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -56,18 +58,55 @@ class SquareGridTest {
     @Test
     void getNeighbors() {
         Pair<Integer, Integer> target = new Pair<>(1,1);
-        Set<Pair<Integer, Integer>> neighbors = Set.of(
-                new Pair<>(0,0),
-                new Pair<>(0,1),
-                new Pair<>(0,2),
+        Map<Pair<Integer, Integer>, Optional<Integer>> neighbors = Map.ofEntries(
+                Map.entry(new Pair<>(0,0), Optional.empty()),
+                Map.entry(new Pair<>(0,1), Optional.empty()),
+                Map.entry(new Pair<>(0,2), Optional.empty()),
 
-                new Pair<>(1,0),
-                new Pair<>(1,2),
+                Map.entry(new Pair<>(1,0), Optional.empty()),
+                Map.entry(new Pair<>(1,2), Optional.empty()),
 
-                new Pair<>(2,0),
-                new Pair<>(2,1),
-                new Pair<>(2,2)
+                Map.entry(new Pair<>(2,0), Optional.empty()),
+                Map.entry(new Pair<>(2,1), Optional.empty()),
+                Map.entry(new Pair<>(2,2), Optional.empty())
         );
         assertEquals(neighbors, grid.neighbors(target));
+    }
+    @Test
+    void getNeighborsOfTopLeftCorner() {
+        Pair<Integer, Integer> target = new Pair<>(0,0);
+        Map<Pair<Integer, Integer>, Optional<Integer>> neighbors = Map.ofEntries(
+                Map.entry(new Pair<>(0,1), Optional.empty()),
+                Map.entry(new Pair<>(1,1), Optional.empty()),
+                Map.entry(new Pair<>(1,0), Optional.empty())
+        );
+        assertEquals(neighbors, grid.neighbors(target));
+    }
+    @Test
+    void getNeighborsOfBottomRightCorner() {
+        Pair<Integer, Integer> target = new Pair<>(size-1,size-1);
+        Map<Pair<Integer, Integer>, Optional<Integer>> neighbors = Map.ofEntries(
+                Map.entry(new Pair<>(size-2,size-1), Optional.empty()),
+                Map.entry(new Pair<>(size-2,size-2), Optional.empty()),
+                Map.entry(new Pair<>(size-1,size-2), Optional.empty())
+        );
+        assertEquals(neighbors, grid.neighbors(target));
+    }
+    @Test
+    void cannotGetNeighborsOfCellOutsideGrid() {
+        assertThrows(
+                ArrayIndexOutOfBoundsException.class,
+                () -> grid.neighbors(new Pair<>(-1, -1))
+        );
+    }
+    @Test
+    void getAllCellsInitiallyEmpty() {
+        for (var cell : grid.allCells().entrySet())
+            if (cell.getValue().isPresent())
+                fail();
+    }
+    @Test
+    void allCellsOfCorrectSize() {
+        assertEquals(size*size, grid.allCells().size());
     }
 }

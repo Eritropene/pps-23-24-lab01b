@@ -1,13 +1,30 @@
 package e2;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class LogicsImplTest {
 
     private Logics logics;
+    private final int size = 5;
+    private int mines;
+    private final Set<Pair<Integer, Integer>> minesSet = Set.of(
+            new Pair<>(0,0),
+            new Pair<>(0,1),
+            new Pair<>(3,2),
+            new Pair<>(4,2)
+    );
+
+    @BeforeEach
+    void init() {
+        this.mines = minesSet.size();
+        this.logics = new TestLogicsImpl(size, minesSet);
+    }
     @Test
     void cannotCreateLogicsWithNegativeSize() {
         assertThrows(
@@ -31,22 +48,22 @@ class LogicsImplTest {
     }
     @Test
     void cannotAccessOutsideCell() {
-        final int size = 5;
-        Logics logics = new LogicsImpl(size, 4);
         assertThrows(
                 ArrayIndexOutOfBoundsException.class,
                 () -> logics.cell(new Pair<>(size, size))
         );
     }
     @Test
-    void allCellsInitiallyEmpty() {
-        final int size = 5;
-        Logics logics = new LogicsImpl(size, 4);
+    void allCellsHaveValue() {
         for (int x=0; x<size; x++) {
             for (int y=0; y<size; y++) {
-                if (logics.cell(new Pair<>(x,y)).isPresent())
+                if (logics.cell(new Pair<>(x,y)).isEmpty())
                     fail();
             }
         }
+    }
+    @Test
+    void getMines() {
+        
     }
 }

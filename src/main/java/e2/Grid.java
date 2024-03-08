@@ -8,5 +8,6 @@ public interface Grid {
     Integer getHeight();
     Optional<Integer> getCell(Pair<Integer, Integer> position);
     void setCell(Pair<Integer, Integer> position, Integer value);
-    Map<Pair<Integer, Integer>,Integer> neighbors(Pair<Integer, Integer> cell);
+    Map<Pair<Integer, Integer>, Optional<Integer>> neighbors(Pair<Integer, Integer> cell);
+    Map<Pair<Integer, Integer>, Optional<Integer>> allCells();
 }

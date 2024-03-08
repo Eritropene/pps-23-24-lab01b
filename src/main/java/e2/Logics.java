@@ -8,4 +8,5 @@ public interface Logics {
     boolean isMine(Pair<Integer, Integer> pos);
     boolean isFlag(Pair<Integer, Integer> pos);
     void toggleFlag(Pair<Integer, Integer> pos);
+    boolean hit(Pair<Integer, Integer> pos);
 }

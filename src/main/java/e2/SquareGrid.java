@@ -30,12 +30,28 @@ public class SquareGrid implements Grid {
     }
 
     @Override
-    public Map<Pair<Integer, Integer>, Integer> neighbors(Pair<Integer, Integer> cell) {
-        Map<Pair<Integer, Integer>, Integer> neighbors = new HashMap<>();
-        for (int dx=-1; dx<=1; dx++)
-            for (int dy=-1; dy<=1; dy++)
-                if (dx !=)
-        return null;
+    public Map<Pair<Integer, Integer>, Optional<Integer>> neighbors(Pair<Integer, Integer> cell) {
+        checkPosition(cell);
+        Map<Pair<Integer, Integer>, Optional<Integer>> neighbors = new HashMap<>();
+        for (int x = cell.getX()-1; x <= cell.getX()+1; x++)
+            for (int y = cell.getY()-1; y <= cell.getY()+1; y++)
+                try {
+                    Pair<Integer, Integer> nearPosition = new Pair<>(x,y);
+                    if (!nearPosition.equals(cell))
+                        neighbors.put(nearPosition, getCell(nearPosition));
+                } catch (ArrayIndexOutOfBoundsException ignored) {}
+        return neighbors;
+    }
+
+    @Override
+    public Map<Pair<Integer, Integer>, Optional<Integer>> allCells() {
+        Map<Pair<Integer, Integer>, Optional<Integer>> all = new HashMap<>();
+        for (int x=0; x<this.getWidth(); x++)
+            for (int y=0; y<this.getHeight(); y++) {
+                Pair<Integer, Integer> position = new Pair<>(x, y);
+                all.put(position, this.getCell(position));
+            }
+        return all;
     }
 
     @Override
@@ -48,19 +64,6 @@ public class SquareGrid implements Grid {
         if (position.getX() < 0 || position.getX() >= this.size ||
             position.getY() < 0 || position.getY() >= this.size)
             throw new ArrayIndexOutOfBoundsException("Position out of grid");
-    }
-    private Pair<Integer, Integer> clampPosition(Pair<Integer, Integer> position) {
-        Integer x = position.getX();
-        Integer y = position.getY();
-        if (x < 0)
-            x = 0;
-        if (x >= this.size)
-            x = this.size - 1;
-        if (y < 0)
-            y = 0;
-        if (y >= this.size)
-            y = this.size - 1;
-        return new Pair<>(x, y);
     }
 
 }

@@ -5,15 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ea95162-5b2e-4e88-8b7a-369e5727f750" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/e2/Grid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/e2/MineGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/e2/SquareGrid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/e2/SquareGridTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/e2/RandomMineGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/e2/StaticMineGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/e2/TestLogicsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/e2/RandomMineGeneratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/e2/AbstractLogics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/e2/AbstractLogics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/e2/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/e2/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/e2/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/e2/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/e2/Logics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/e2/Logics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/e2/LogicsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/e2/LogicsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/e2/MineGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/e2/MineGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/e2/SquareGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/e2/SquareGrid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/e2/LogicsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e2/LogicsImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/e2/SquareGridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e2/SquareGridTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +45,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,19 +65,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.LogicsImplTest.cannotCreateLogicsWithNegativeMines.executor": "Run",
-    "Gradle.LogicsImplTest.cannotCreateLogicsWithNegativeSize.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.LogicsImplTest.cannotCreateLogicsWithNegativeMines.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LogicsImplTest.cannotCreateLogicsWithNegativeSize.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="e2" />
@@ -83,8 +89,8 @@
       <recent name="e2" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SquareGridTest.getNeighbors">
-    <configuration name="SquareGridTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.LogicsImplTest">
+    <configuration name="LogicsImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -97,7 +103,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;e2.SquareGridTest&quot;" />
+            <option value="&quot;e2.LogicsImplTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -108,7 +114,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SquareGridTest.cannotGetCellOutsideGrid (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LogicsImplTest.allCellsHaveValue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -121,7 +127,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;e2.SquareGridTest.cannotGetCellOutsideGrid&quot;" />
+            <option value="&quot;e2.LogicsImplTest.allCellsHaveValue&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -132,7 +138,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SquareGridTest.cannotSetCellOutsideGrid" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LogicsImplTest.allCellsInitiallyEmpty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -145,7 +151,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;e2.SquareGridTest.cannotSetCellOutsideGrid&quot;" />
+            <option value="&quot;e2.LogicsImplTest.allCellsInitiallyEmpty&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -156,7 +162,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SquareGridTest.getCell" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SquareGridTest.allCellsOfCorrectSize" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +175,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;e2.SquareGridTest.getCell&quot;" />
+            <option value="&quot;e2.SquareGridTest.allCellsOfCorrectSize&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -180,7 +186,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SquareGridTest.getNeighbors" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SquareGridTest.getAllCellsInitiallyEmpty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -193,7 +199,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;e2.SquareGridTest.getNeighbors&quot;" />
+            <option value="&quot;e2.SquareGridTest.getAllCellsInitiallyEmpty&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,11 +212,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.SquareGridTest.getNeighbors" />
-        <item itemvalue="Gradle.SquareGridTest.getCell" />
-        <item itemvalue="Gradle.SquareGridTest.cannotSetCellOutsideGrid" />
-        <item itemvalue="Gradle.SquareGridTest" />
-        <item itemvalue="Gradle.SquareGridTest.cannotGetCellOutsideGrid (1)" />
+        <item itemvalue="Gradle.LogicsImplTest" />
+        <item itemvalue="Gradle.LogicsImplTest.allCellsHaveValue" />
+        <item itemvalue="Gradle.SquareGridTest.allCellsOfCorrectSize" />
+        <item itemvalue="Gradle.SquareGridTest.getAllCellsInitiallyEmpty" />
+        <item itemvalue="Gradle.LogicsImplTest.allCellsInitiallyEmpty" />
       </list>
     </recent_temporary>
   </component>
