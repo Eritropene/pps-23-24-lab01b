@@ -56,6 +56,13 @@ class SquareGridTest {
         assertEquals(3, grid.getCell(pos).get());
     }
     @Test
+    void isInside() {
+        assertAll(
+                () -> assertTrue(grid.isInside(new Pair<>(0, 0))),
+                () -> assertFalse(grid.isInside(new Pair<>(-1, -1)))
+        );
+    }
+    @Test
     void getNeighbors() {
         Pair<Integer, Integer> target = new Pair<>(1,1);
         Map<Pair<Integer, Integer>, Optional<Integer>> neighbors = Map.ofEntries(

@@ -35,7 +35,7 @@ public class GUI extends JFrame {
             } else {
                 drawBoard();            	
             }
-            boolean isThereVictory = this.logics.hasWon(); // call the logic here to ask if there is victory
+            boolean isThereVictory = this.logics.victory(); // call the logic here to ask if there is victory
             if (isThereVictory){
                 quitGame();
                 JOptionPane.showMessageDialog(this, "You won!!");
@@ -89,13 +89,16 @@ public class GUI extends JFrame {
             // call the logic here
             var pos = entry.getValue();
             var bt = entry.getKey();
-            // if this button is a cell with counter, put the number
-            if (this.logics.cell(pos).isPresent()) {
-                bt.setText(this.logics.cell(pos).get().toString());
-            }
             // if this button has a flag, put the flag
             if (this.logics.isFlag(pos)) {
                 bt.setText(FLAG_TEXT);
+            }
+            // if this button is a cell with counter, put the number
+            else if (this.logics.cell(pos).isPresent()) {
+                bt.setText(this.logics.cell(pos).get().toString());
+                bt.setEnabled(false);
+            } else {
+                bt.setText("");
             }
     	}
     }

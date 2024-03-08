@@ -24,6 +24,12 @@ public class SquareGrid implements Grid {
     }
 
     @Override
+    public boolean isInside(Pair<Integer, Integer> position) {
+        return position.getX() >= 0 && position.getX() < this.size &&
+                position.getY() >= 0 && position.getY() < this.size;
+    }
+
+    @Override
     public Optional<Integer> getCell(Pair<Integer, Integer> position) {
         checkPosition(position);
         return Optional.ofNullable(this.cells.get(position));
@@ -61,8 +67,7 @@ public class SquareGrid implements Grid {
     }
 
     private void checkPosition(Pair<Integer, Integer> position) {
-        if (position.getX() < 0 || position.getX() >= this.size ||
-            position.getY() < 0 || position.getY() >= this.size)
+        if (!isInside(position))
             throw new ArrayIndexOutOfBoundsException("Position out of grid");
     }
 
